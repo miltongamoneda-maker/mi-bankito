@@ -1,36 +1,36 @@
 # 15 puntos ideales — Mi Bankito Nicaragua
 
-Evaluados con el motor real (`scan-bankito`), no estimados.
-Criterio: gente circulando + zona sin bancos + transporte + clientela de préstamos.
+Evaluados con el motor real (`scan-bankito`). Criterio de kiosco: **gente circulando +
+zona sin bancos + transporte + clientela de préstamos**. Sucursal de 10 m².
 
-| # | Punto | Zona | Nota | Bancos cerca | Comercios | Transporte |
+| # | Punto | Coordenadas | Nota | Bancos | Comercios | Transporte |
 |---|---|---|---:|---:|---:|---:|
-| 1 | **Mercado Huembes** | mercado | **A 7.95** | 4 | 20 | 4 |
-| 2 | **León centro** | comercial | **A 7.18** | 10 | 20 | 15 |
-| 3 | **Bello Horizonte** | comercial | **A 7.13** | 2 | 20 | 0 |
-| 4 | **Mercado Oriental** | mercado | **A 7.04** | 5 | 9 | 9 |
-| 5 | Mercado Iván Montenegro | mercado | B 6.71 | 3 | 19 | 2 |
-| 6 | Mercado Israel Lewites | mercado | B 6.10 | 5 | 14 | 2 |
-| 7 | Terminal UCA | terminal | B 5.95 | 10 | 6 | 5 |
-| 8 | Tipitapa centro | comercial | B 5.95 | 4 | 20 | 0 |
-| 9 | Ciudad Belén | barrio popular | B 5.59 | 0 | 2 | 0 |
-| 10 | Ciudad Sandino centro | barrio popular | B 5.37 | 1 | 1 | 0 |
-| 11 | Villa Libertad | barrio popular | B 5.36 | 7 | 14 | 1 |
-| 12 | Masaya mercado | mercado | C 5.08 | 11 | 20 | 1 |
-| 13 | Mateare centro | comercial | C 3.82 | 0 | 0 | 0 |
-| 14 | Tipitapa Km 18 | comercial | C 3.82 | 0 | 0 | 0 |
-| 15 | Mercado Mayoreo | mercado | D 3.09 | 0 | 0 | 0 |
+| 1 | **Mercado Roberto Huembes (sur)** | 12.1424, -86.2447 | **A+ 8.20** | 4 | 20 | 7 |
+| 2 | **Mercado Huembes** | 12.1265, -86.2436 | **A 7.95** | 4 | 20 | 4 |
+| 3 | **León Mercado Central** | 12.4373, -86.8779 | **A 7.18** | 10 | 20 | 20 |
+| 4 | **Bello Horizonte** | 12.1150, -86.2380 | **A 7.13** | 2 | 20 | 0 |
+| 5 | **Mercado Oriental** | 12.1508, -86.2504 | **A 7.04** | 5 | 9 | 9 |
+| 6 | **Mayoreo Tipitapa** | 12.1490, -86.3040 | **A 7.04** | 10 | 20 | 8 |
+| 7 | Mercado Iván Montenegro | 12.1370, -86.2100 | B 6.71 | 3 | 19 | 2 |
+| 8 | Mercado Mayoreo | 12.1553, -86.1889 | B 6.26 | 3 | 20 | 1 |
+| 9 | Mercado Israel Lewites | 12.1310, -86.2960 | B 6.10 | 5 | 14 | 2 |
+| 10 | Jinotepe centro | 11.8447, -86.1911 | B 5.96 | 1 | 5 | 0 |
+| 11 | Terminal UCA | 12.1290, -86.2700 | B 5.95 | 10 | 6 | 5 |
+| 12 | Tipitapa centro | 12.1970, -86.0970 | B 5.95 | 4 | 20 | 0 |
+| 13 | Ciudad Belén | 12.1620, -86.2280 | B 5.59 | 0 | 2 | 0 |
+| 14 | Estelí centro | 13.0930, -86.3560 | B 5.53 | 6 | 20 | 0 |
+| 15 | Ciudad Sandino centro | 12.1580, -86.3450 | B 5.37 | 1 | 1 | 0 |
 
-## Cómo leerlo
+**Ninguno bajo B.** Los mercados dominan el top — es la lógica correcta: mucha gente,
+poca bancarización, y ahí está quien paga servicios y recibe remesas.
 
-**Los 4 primeros (A) son donde arrancar.** Mercado Huembes lidera: 20 comercios
-alrededor, transporte y solo 4 bancos.
+## Lecciones de la evaluación
 
-**Ojo con Masaya (C 5.08):** tiene muchísimo flujo (20 comercios) pero **11 bancos/ATM**
-alrededor — la zona ya está bancarizada, que es justo lo que resta para un corresponsal.
+- **La coordenada importa muchísimo.** Mercado Mayoreo dio **D 3.09** con una coordenada
+  mal puesta y **B 6.26** con la correcta. Apuntar al punto exacto, no al nombre del barrio.
+- **Masaya quedó fuera (C 5.08)** pese a 20 comercios: tiene **11 bancos/ATM** alrededor.
+  Zona ya bancarizada = poca demanda para un corresponsal. El modelo lo capta bien.
+- **Matagalpa centro (C 5.06)**: mismo caso, 14 bancos.
 
-**Los últimos 3 (Mateare, Km 18, Mayoreo)** dieron bajo porque las coordenadas caen donde
-Google no tiene comercios mapeados. **No significa que la zona sea mala** — significa que
-hay que apuntar mejor la coordenada al punto exacto del mercado o el centro.
-
-⚠️ Sin calibrar contra desempeño real: todavía no hay sucursales operando.
+⚠️ Sin calibrar contra desempeño real — no hay sucursales operando todavía.
+Cuando abran las primeras, recalibrar contra transacciones reales.

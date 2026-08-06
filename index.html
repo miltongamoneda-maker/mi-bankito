@@ -30,6 +30,29 @@ button:disabled{opacity:.5;cursor:wait}
 .res{background:#f1f5f9;border-radius:8px;padding:12px;font-size:13px;color:#334155}
 .load{text-align:center;color:#64748b;padding:30px 0}
 </style></head><body>
+<div id="gate" style="position:fixed;inset:0;background:#0f172a;display:flex;align-items:center;justify-content:center;z-index:9999">
+  <div style="background:#fff;padding:32px;border-radius:14px;max-width:340px;width:90%;text-align:center">
+    <div style="font-size:36px;margin-bottom:8px">&#127974;</div>
+    <h2 style="font-size:18px;margin-bottom:6px">Mi Bankito</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:18px">Acceso restringido</p>
+    <input id="pw" type="password" placeholder="Contrase&ntilde;a" style="width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;margin-bottom:10px;font-size:15px">
+    <button id="enter" style="width:100%;padding:11px;background:#0f172a;color:#fff;border:0;border-radius:8px;font-weight:600;cursor:pointer">Entrar</button>
+    <p id="err" style="color:#dc2626;font-size:12px;margin-top:10px;display:none">Contrase&ntilde;a incorrecta</p>
+  </div>
+</div>
+<script>
+const PW_HASH="691cc1a50b16deb2892111a0ebf23bff1d220150664a976675b6261e89b65cc6";
+async function sha256(t){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));
+  return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");}
+async function tryEnter(){
+  const v=document.getElementById("pw").value;
+  if(await sha256(v)===PW_HASH){ sessionStorage.setItem("bk_ok","1"); document.getElementById("gate").remove(); }
+  else document.getElementById("err").style.display="block";
+}
+document.getElementById("enter").onclick=tryEnter;
+document.getElementById("pw").addEventListener("keydown",e=>{if(e.key==="Enter")tryEnter();});
+if(sessionStorage.getItem("bk_ok")==="1") document.getElementById("gate").remove();
+</script>
 <header><h1>🏦 Mi Bankito</h1><span>Evaluador de ubicaciones · sucursal 10 m² · bancos + prestamistas + remesas</span></header>
 <div class="wrap">
   <div id="map"></div>
