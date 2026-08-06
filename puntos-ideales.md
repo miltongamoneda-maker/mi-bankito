@@ -1,36 +1,49 @@
 # 15 puntos ideales — Mi Bankito Nicaragua
 
-Evaluados con el motor real (`scan-bankito`). Criterio de kiosco: **gente circulando +
-zona sin bancos + transporte + clientela de préstamos**. Sucursal de 10 m².
+Evaluados con el motor `scan-bankito` sobre las **39 zonas ya curadas y validadas de SiteLo**
+(no son puntos inventados: son coordenadas que el equipo ya trabajó para tiendas).
 
-| # | Punto | Coordenadas | Nota | Bancos | Comercios | Transporte |
-|---|---|---|---:|---:|---:|---:|
-| 1 | **Mercado Roberto Huembes (sur)** | 12.1424, -86.2447 | **A+ 8.20** | 4 | 20 | 7 |
-| 2 | **Mercado Huembes** | 12.1265, -86.2436 | **A 7.95** | 4 | 20 | 4 |
-| 3 | **León Mercado Central** | 12.4373, -86.8779 | **A 7.18** | 10 | 20 | 20 |
-| 4 | **Bello Horizonte** | 12.1150, -86.2380 | **A 7.13** | 2 | 20 | 0 |
-| 5 | **Mercado Oriental** | 12.1508, -86.2504 | **A 7.04** | 5 | 9 | 9 |
-| 6 | **Mayoreo Tipitapa** | 12.1490, -86.3040 | **A 7.04** | 10 | 20 | 8 |
-| 7 | Mercado Iván Montenegro | 12.1370, -86.2100 | B 6.71 | 3 | 19 | 2 |
-| 8 | Mercado Mayoreo | 12.1553, -86.1889 | B 6.26 | 3 | 20 | 1 |
-| 9 | Mercado Israel Lewites | 12.1310, -86.2960 | B 6.10 | 5 | 14 | 2 |
-| 10 | Jinotepe centro | 11.8447, -86.1911 | B 5.96 | 1 | 5 | 0 |
-| 11 | Terminal UCA | 12.1290, -86.2700 | B 5.95 | 10 | 6 | 5 |
-| 12 | Tipitapa centro | 12.1970, -86.0970 | B 5.95 | 4 | 20 | 0 |
-| 13 | Ciudad Belén | 12.1620, -86.2280 | B 5.59 | 0 | 2 | 0 |
-| 14 | Estelí centro | 13.0930, -86.3560 | B 5.53 | 6 | 20 | 0 |
-| 15 | Ciudad Sandino centro | 12.1580, -86.3450 | B 5.37 | 1 | 1 | 0 |
+La columna *tienda* es la nota objetivo de SiteLo para una tienda AMPM en ese mismo punto.
+**Sirve para ver que no son el mismo negocio.**
 
-**Ninguno bajo B.** Los mercados dominan el top — es la lógica correcta: mucha gente,
-poca bancarización, y ahí está quien paga servicios y recibe remesas.
+| # | Punto | Coordenadas | **Bankito** | tienda | Bancos cerca | Comercios | Transporte |
+|---|---|---|---:|---:|---:|---:|---:|
+| 1 | **León Sutiava** | 12.4352, -86.8903 | **A 7.8** | 6.568 | 1 | 20 | 3 |
+| 2 | **Km 4 c norte** | 12.1529, -86.2498 | **A 7.49** | 7.028 | 1 | 8 | 7 |
+| 3 | **La Reynaga/El Edén** | 12.1408, -86.242 | **A 7.45** | 6.558 | 4 | 17 | 3 |
+| 4 | **Mercado Oriental** | 12.1456, -86.2536 | **A 7.26** | 6.658 | 8 | 20 | 11 |
+| 5 | **Av. Simón Bolívar** | 12.1457, -86.2733 | **A 7.11** | 6.908 | 2 | 14 | 6 |
+| 6 | Ciudad Sandino III | 12.1667, -86.3586 | **B 6.76** | 6.448 | 2 | 20 | 0 |
+| 7 | Condega | 13.365, -86.399 | **B 6.58** | 6.888 | 2 | 20 | 0 |
+| 8 | El Mayoreo | 12.1356, -86.1984 | **B 6.55** | 6.738 | 2 | 20 | 1 |
+| 9 | Carr. Vieja León | 12.106, -86.3274 | **B 6.38** | 6.418 | 2 | 2 | 3 |
+| 10 | El Viejo | 12.6581, -87.1654 | **B 6.34** | 6.218 | 1 | 20 | 0 |
+| 11 | Col. Centroamérica | 12.1165, -86.2515 | **B 6.29** | 6.508 | 20 | 20 | 3 |
+| 12 | Altamira | 12.1231, -86.2531 | **B 6.27** | 6.418 | 5 | 20 | 0 |
+| 13 | León Hospital | 12.4537, -86.8696 | **B 6.21** | 5.988 | 2 | 6 | 1 |
+| 14 | La Dalia | 13.1361, -85.7363 | **B 6.15** | 5.828 | 5 | 20 | 0 |
+| 15 | Ofiplaza El Retiro | 12.1208, -86.2833 | **B 5.93** | 6.478 | 6 | 6 | 3 |
 
-## Lecciones de la evaluación
+## Lo que revela la comparación
 
-- **La coordenada importa muchísimo.** Mercado Mayoreo dio **D 3.09** con una coordenada
-  mal puesta y **B 6.26** con la correcta. Apuntar al punto exacto, no al nombre del barrio.
-- **Masaya quedó fuera (C 5.08)** pese a 20 comercios: tiene **11 bancos/ATM** alrededor.
-  Zona ya bancarizada = poca demanda para un corresponsal. El modelo lo capta bien.
-- **Matagalpa centro (C 5.06)**: mismo caso, 14 bancos.
+**El mejor punto para una tienda NO es el mejor para un Bankito.**
 
-⚠️ Sin calibrar contra desempeño real — no hay sucursales operando todavía.
+- **León Sutiava** es apenas 6.568 para tienda, pero **A 7.8 para Bankito** — el mejor de todos.
+  Tiene 20 comercios y **un solo banco** en 800 m: mucha gente, cero bancarización.
+- **Metrocentro**, el #1 para tienda (7.068), **ni entra al top 15** de Bankito: está rodeado de bancos.
+- **Col. Centroamérica** aparece 11º pese a tener **20 bancos/ATM** cerca — la salva el volumen de gente,
+  pero es el tipo de punto donde el corresponsal compite de frente.
+
+## Por qué los criterios son casi inversos
+
+| Factor | Tienda AMPM | **Mi Bankito** |
+|---|---|---|
+| Bancos/ATM cerca | indiferente | **mejor LEJOS** — zona desatendida = demanda |
+| Gente circulando | suma | **lo que más pesa** (34%) |
+| Financieras/prestamistas | irrelevante | **suman** — ahí está quien paga cuotas |
+| Puntos de remesa | irrelevante | **restan** — compiten directo |
+| NSE | alto mejor | **medio/popular** usa más estos servicios |
+| Espacio | 80-150 m² | **10 m²** → no es restricción |
+
+⚠️ Sin calibrar contra desempeño real: todavía no hay sucursales operando.
 Cuando abran las primeras, recalibrar contra transacciones reales.
